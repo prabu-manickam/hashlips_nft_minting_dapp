@@ -6,13 +6,16 @@
     "SYMBOL": "Matic",
     "ID": 137
   },
-  "NFT_NAME": "Nerdy Coder Clones",
-  "SYMBOL": "NCC",
-  "MAX_SUPPLY": 1000,
+  "NFT_NAME": "Good & Bad Dinosuars",
+  "SYMBOL": "GBD",
+  "MAX_SUPPLY": 3500,
   "WEI_COST": 75000000000000000,
   "DISPLAY_COST": 0.075,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
   "MARKETPLACE_LINK": "https://opensea.io/collection/nerdy-coder-clones",
-  "SHOW_BACKGROUND": true
+  "SHOW_BACKGROUND": false,
+  "DISCORD_INVITE_LINK" : "https://discord.com",
+  "TWITTER_LINK" : "https://www.twitter.com",
+  "INSTRAGRAM_LINK" : "https://www.instagram.com"
 }

@@ -127,10 +127,19 @@ table {
   font-family: "coder";
   src: local("coder"), url(font.woff) format("woff");
 }
+@font-face {
+  font-family: "mario";
+  src: local("mario"), url(Mario-Kart-DS.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "mister-pixel";
+  src: local("mister-pixel"), url(Mister-Pixel-Regular.otf) format("truetype");
+}
 
 body {
   margin: 0;
-  font-family: "coder", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  font-family: "Nunito", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

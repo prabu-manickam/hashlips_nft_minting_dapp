@@ -12,10 +12,10 @@ export const StyledButton = styled.button`
   padding: 10px;
   border-radius: 50px;
   border: none;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   padding: 10px;
   font-weight: bold;
-  color: var(--secondary-text);
+  color: var(--primary-text);
   width: 100px;
   cursor: pointer;
   box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
@@ -70,15 +70,15 @@ export const StyledLogo = styled.img`
   @media (min-width: 767px) {
     width: 300px;
   }
-  transition: width 0.5s;
-  transition: height 0.5s;
+  transition: width 0.9s;
+  transition: height 0.9s;
 `;
 
 export const StyledImg = styled.img`
-  box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
-  border: 4px dashed var(--secondary);
-  background-color: var(--accent);
-  border-radius: 100%;
+  //box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
+  //border: 1px dashed var(--secondary);
+  //background-color: var(--accent);
+  border-radius: 10%;
   width: 200px;
   @media (min-width: 900px) {
     width: 250px;
@@ -86,12 +86,33 @@ export const StyledImg = styled.img`
   @media (min-width: 1000px) {
     width: 300px;
   }
-  transition: width 0.5s;
+  transition: width 0.9s;
+`;
+
+export const StyledImgFrame = styled.img`
+  box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
+  //border: 5px solid var(--secondary);
+  //background-color: var(--accent);
+  background-color: #fff;
+  border-radius: 0%;
+  border: 10px solid;
+  padding: 15px;
+  width: 600px;
+  @media (min-width: 900px) {
+    width: 250px;
+  }
+  @media (min-width: 1000px) {
+    width: 400px;
+  }
+  transition: width 0.9s;
 `;
 
 export const StyledLink = styled.a`
-  color: var(--secondary);
+  color: var(--secondary-text);
   text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
 `;
 
 function App() {
@@ -195,17 +216,186 @@ function App() {
 
   return (
     <s.Screen>
+
       <s.Container
         flex={1}
         ai={"center"}
-        style={{ padding: 24, backgroundColor: "var(--primary)" }}
+        style={{
+          padding: 12,
+          backgroundColor: "#1F1D36",
+          // height: "100vh",
+          // background: "rgb(238,174,202)",
+          // background: "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
+          // backgroundColor: "#0093E9",
+          // backgroundImage: "linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)",
+          // backgroundColor: "#21D4FD",
+          // backgroundImage: "linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)",
+
+
+
+          // background: "rgb(63,94,251)",
+          // background: "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)"
+        }}
+        image={CONFIG.SHOW_BACKGROUND ? "/config/images/emaple.png" : null}
+      >
+        <ResponsiveWrapper flex={1} >
+        <s.Container
+            flex={1}
+            ai={"left"}
+            style={{ padding : "20px", alignItems : "center"}}
+            >
+            <StyledImg alt={"good-dino"} src={"/config/images/dino-face-logo.png"}
+              style={{ width: "100px", borderBottom: "solid 2px #fff", borderRadius: "50%" }} />
+          </s.Container>
+
+          <s.Container
+            flex={1}
+            ai={"left"}
+            style={{ padding : "20px" }}
+            >
+            
+          </s.Container>
+
+          <s.Container
+            flex={1}
+            ai={"right"}
+            style={{
+              alignSelf: "center",
+              padding : "20px"
+            }}
+          >
+            <s.StyledClickable style={{ alignSelf : "center"}}>
+              <StyledLink target={"_blank"} href="#" >
+                Mint
+              </StyledLink>
+              <StyledLink target={"_blank"} href="#" >
+                Collection
+                </StyledLink>
+              <StyledLink target={"_blank"} href="#">
+                Roadmap
+              </StyledLink>
+              <StyledLink target={"_blank"} href="#" >
+                Team
+              </StyledLink>
+            </s.StyledClickable>
+          </s.Container>
+
+        </ResponsiveWrapper>
+      </s.Container>
+
+      <s.Container
+        flex={1}
+        ai={"center"}
+        style={{
+          padding: 0,
+          backgroundColor: "#1F1D36",
+          fontColor: "#000",
+          // background: "rgb(238,174,202)",
+          // background: "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
+          // backgroundColor: "#0093E9",
+          // backgroundImage: "linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)",
+          // backgroundColor: "#21D4FD",
+          // backgroundImage: "linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)",
+
+          // background: "rgb(63,94,251)",
+          // background: "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)"
+        }}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
-        <s.SpacerSmall />
+        <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
+          <s.Container style={{ flex: "0 0 50%", float: "left", alignSelf: "center" }}>
+            <s.TextTitleGlow
+              style={{
+                textAlign: "center",
+                fontSize: 50,
+                fontWeight: "bold",
+                color: "#fff",
+                float: "left",
+                alignSelf: "center",
+                //fontFamily: "mario"
+              }}
+            >
+              Good &amp; Bad Dinosuars
+            </s.TextTitleGlow>
+            <s.SpacerLarge />
+            <s.TextDescription
+              style={{
+                textAlign: "center",
+                color: "#fff",
+                fontSize: 20,
+              }}
+            >
+              3500 Unique &amp; rare collection of good and bad dinosaurs freely roaming on the world of blockchain and sign your contract to own one of them
+            </s.TextDescription>
+          </s.Container>
+          <s.Container style={{ flex: "0 0 50%", alignItems: "center", }}>
+
+            <StyledImgFrame alt={"good-dino"} src={"/config/images/example.gif"} style={{ width : "50%" }} />
+            <s.SpacerLarge />
+
+          </s.Container>
+        </ResponsiveWrapper>
+
+
+
+      </s.Container>
+      <s.Container
+        flex={1}
+        ai={"center"}
+        style={{
+          padding: 24,
+          backgroundColor: "#1F1D36",
+          // background: "rgb(238,174,202)",
+          // background: "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
+          // background: "rgb(63,94,251)",
+          // background: "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)"
+        }}
+        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+      >
+        <div class="follow-us spread">
+          <ul>
+            <li><a href=""><i class="fab fa-discord fa-3x" /></a></li>
+            <li><a href=""><i class="fab fa-instagram fa-3x"></i></a></li>
+            <li><a href=""><i class="fab fa-twitter fa-3x"></i></a></li>
+
+          </ul>
+        </div>
+      </s.Container>
+
+    <div class="divider div-transparent div-arrow-down"></div>  
+
+      <s.Container
+        flex={1}
+        ai={"center"}
+        style={{
+          padding: 24,
+          backgroundColor: "#1F1D36",
+          // background: "rgb(238,174,202)",
+          // background: "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
+          // background: "rgb(63,94,251)",
+          // background: "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)"
+        }}
+        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+      >
+
+        <s.TextTitleGlow
+          style={{
+            textAlign: "left",
+            fontSize: 40,
+            fontWeight: "bold",
+            color: "var(--accent-text)",
+            float: "left",
+            paddingTop: "20px"
+            // fontFamily: "mister-pixel"
+          }}
+        >
+          Mint : Get your own dinosaur
+            </s.TextTitleGlow>
+
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/example.gif"} />
+            <StyledImg alt={"good-dino"} src={"/config/images/good-dino-static-img.png"}
+              style={{ transform: "scaleX(-1)" }} />
           </s.Container>
           <s.SpacerLarge />
           <s.Container
@@ -217,7 +407,7 @@ function App() {
               padding: 24,
               borderRadius: 24,
               border: "4px dashed var(--secondary)",
-              boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
+              //boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
             }}
           >
             <s.TextTitle
@@ -259,122 +449,122 @@ function App() {
                 </StyledLink>
               </>
             ) : (
-              <>
-                <s.TextTitle
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
-                >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
+                <>
+                  <s.TextTitle
+                    style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  >
+                    1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+                    {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
-                <s.SpacerXSmall />
-                <s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
-                >
-                  Excluding gas fees.
+                  <s.SpacerXSmall />
+                  <s.TextDescription
+                    style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  >
+                    Excluding gas fees.
                 </s.TextDescription>
-                <s.SpacerSmall />
-                {blockchain.account === "" ||
-                blockchain.smartContract === null ? (
-                  <s.Container ai={"center"} jc={"center"}>
-                    <s.TextDescription
-                      style={{
-                        textAlign: "center",
-                        color: "var(--accent-text)",
-                      }}
-                    >
-                      Connect to the {CONFIG.NETWORK.NAME} network
-                    </s.TextDescription>
-                    <s.SpacerSmall />
-                    <StyledButton
-                      onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(connect());
-                        getData();
-                      }}
-                    >
-                      CONNECT
-                    </StyledButton>
-                    {blockchain.errorMsg !== "" ? (
-                      <>
-                        <s.SpacerSmall />
+                  <s.SpacerSmall />
+                  {blockchain.account === "" ||
+                    blockchain.smartContract === null ? (
+                      <s.Container ai={"center"} jc={"center"}>
                         <s.TextDescription
                           style={{
                             textAlign: "center",
                             color: "var(--accent-text)",
                           }}
                         >
-                          {blockchain.errorMsg}
-                        </s.TextDescription>
-                      </>
-                    ) : null}
-                  </s.Container>
-                ) : (
-                  <>
-                    <s.TextDescription
-                      style={{
-                        textAlign: "center",
-                        color: "var(--accent-text)",
-                      }}
-                    >
-                      {feedback}
+                          Connect to the {CONFIG.NETWORK.NAME} network
                     </s.TextDescription>
-                    <s.SpacerMedium />
-                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                      <StyledRoundButton
-                        style={{ lineHeight: 0.4 }}
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          decrementMintAmount();
-                        }}
-                      >
-                        -
+                        <s.SpacerSmall />
+                        <StyledButton
+                          onClick={(e) => {
+                            e.preventDefault();
+                            dispatch(connect());
+                            getData();
+                          }}
+                        >
+                          CONNECT
+                    </StyledButton>
+                        {blockchain.errorMsg !== "" ? (
+                          <>
+                            <s.SpacerSmall />
+                            <s.TextDescription
+                              style={{
+                                textAlign: "center",
+                                color: "var(--accent-text)",
+                              }}
+                            >
+                              {blockchain.errorMsg}
+                            </s.TextDescription>
+                          </>
+                        ) : null}
+                      </s.Container>
+                    ) : (
+                      <>
+                        <s.TextDescription
+                          style={{
+                            textAlign: "center",
+                            color: "var(--accent-text)",
+                          }}
+                        >
+                          {feedback}
+                        </s.TextDescription>
+                        <s.SpacerMedium />
+                        <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                          <StyledRoundButton
+                            style={{ lineHeight: 0.4 }}
+                            disabled={claimingNft ? 1 : 0}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              decrementMintAmount();
+                            }}
+                          >
+                            -
                       </StyledRoundButton>
-                      <s.SpacerMedium />
-                      <s.TextDescription
-                        style={{
-                          textAlign: "center",
-                          color: "var(--accent-text)",
-                        }}
-                      >
-                        {mintAmount}
-                      </s.TextDescription>
-                      <s.SpacerMedium />
-                      <StyledRoundButton
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          incrementMintAmount();
-                        }}
-                      >
-                        +
+                          <s.SpacerMedium />
+                          <s.TextDescription
+                            style={{
+                              textAlign: "center",
+                              color: "var(--accent-text)",
+                            }}
+                          >
+                            {mintAmount}
+                          </s.TextDescription>
+                          <s.SpacerMedium />
+                          <StyledRoundButton
+                            disabled={claimingNft ? 1 : 0}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              incrementMintAmount();
+                            }}
+                          >
+                            +
                       </StyledRoundButton>
-                    </s.Container>
-                    <s.SpacerSmall />
-                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                      <StyledButton
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          claimNFTs();
-                          getData();
-                        }}
-                      >
-                        {claimingNft ? "BUSY" : "BUY"}
-                      </StyledButton>
-                    </s.Container>
-                  </>
-                )}
-              </>
-            )}
+                        </s.Container>
+                        <s.SpacerSmall />
+                        <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                          <StyledButton
+                            disabled={claimingNft ? 1 : 0}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              claimNFTs();
+                              getData();
+                            }}
+                          >
+                            {claimingNft ? "BUSY" : "BUY"}
+                          </StyledButton>
+                        </s.Container>
+                      </>
+                    )}
+                </>
+              )}
             <s.SpacerMedium />
           </s.Container>
           <s.SpacerLarge />
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg
-              alt={"example"}
-              src={"/config/images/example.gif"}
-              style={{ transform: "scaleX(-1)" }}
+              alt={"bad-dino"}
+              src={"/config/images/bad-dino-static-img.png"}
+
             />
           </s.Container>
         </ResponsiveWrapper>
@@ -403,6 +593,8 @@ function App() {
           </s.TextDescription>
         </s.Container>
       </s.Container>
+
+
     </s.Screen>
   );
 }
